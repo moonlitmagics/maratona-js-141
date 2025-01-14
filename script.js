@@ -3,72 +3,153 @@ Descrição:
 Peça ao usuário dois números e exiba a soma deles.
 Tarefas:
 Crie uma função soma que receba dois números como parâmetros.
-Exiba o resultado no console ou em um alert.
+Exiba o resultado no console ou em um alert.*/
 
-2. Verificação de Par ou Ímpar
+function somar() {
+    const n1 = parseFloat(document.getElementById('n1').value);
+    const n2 = parseFloat(document.getElementById('n2').value);
+    const result = n1 + n2;
+    document.getElementById('result').innerText = `Resultado: ${result}`;
+}
+
+/*2. Verificação de Par ou Ímpar
 Descrição:
 Peça ao usuário um número e diga se ele é par ou ímpar.
 Tarefas:
 Crie uma função que receba um número.
 Verifique se o número é divisível por 2.
-Exiba no console "O número é par" ou "O número é ímpar".
+Exiba no console "O número é par" ou "O número é ímpar".*/
 
-3. Contagem de Números
+function verificar(n3) {
+    var n3 = document.getElementById('n3').value;
+    var num3 = Number.parseFloat(n3);
+
+
+    if (num3 % 2 === 0){
+        var result = "Par";
+    }
+    if (num3 %2 !== 0){
+        var result = "Impar";
+    }
+
+    var resultado = document.getElementById('result1');
+    resultado.innerHTML = result;
+
+    console.log(resultado)
+  }
+
+/*3. Contagem de Números
 Descrição:
 Exiba os números de 1 a 10 usando um loop.
 Tarefas:
 Utilize um loop for para imprimir os números no console.
-Modifique o exercício para usar um while.
+Modifique o exercício para usar um while.*/
 
-4. Tabuada de um Número
+var num4 = '';
+function loop(){
+    for (var i = 1; i <= 10; i++) {
+       num4 += i;
+      }
+
+    document.getElementById("result2").innerHTML = num4;
+
+}
+
+/*4. Tabuada de um Número
 Descrição:
 Crie uma tabuada para um número informado pelo usuário.
 Tarefas:
 Peça ao usuário um número.
 Use um loop for para multiplicar o número de 1 a 10.
-Exiba o resultado no console.
+Exiba o resultado no console.*/
 
-5. Encontrar o Maior Número em uma Lista
+function tabuada() {
+    const n5 = parseFloat(document.getElementById('n5').value);
+    let output = "";
+    for (let i = 1; i <= 10; i++) {
+        output += `${n5} x ${i} = ${n5 * i}\n`;
+    }
+    document.getElementById('result3').innerText = output;
+}
+
+/*5. Encontrar o Maior Número em uma Lista
 Descrição:
 Dado um array de números, encontre o maior valor.
 Tarefas:
 Crie um array como [3, 7, 2, 9, 5].
 Use um loop para comparar os números e encontrar o maior.
-Exiba o maior número no console.
+Exiba o maior número no console.*/
 
-6. Inverter uma Palavra
+function maiorNumero() {
+    const numeros = document.getElementById('numeros').value.split(',').map(Number);
+    let maior = numeros[0];
+    for (let num of numeros) {
+        if (num > maior) maior = num;
+    }
+    document.getElementById('result4').innerText = `Maior número: ${maior}`;
+}
+
+/*6. Inverter uma Palavra
 Descrição:
 Peça ao usuário uma palavra e exiba-a invertida.
 Tarefas:
 Crie uma função que receba uma string.
 Converta a string para um array com o método split.
-Inverta a ordem com o método reverse e transforme novamente em string com join.
+Inverta a ordem com o método reverse e transforme novamente em string com join.*/
 
-7. Soma de Elementos de um Array
+function inverterPalavra() {
+    const palavra = document.getElementById('palavra').value;
+    const invertida = palavra.split("").reverse().join("");
+    document.getElementById('result5').innerText = `Palavra invertida: ${invertida}`;
+}
+
+/*7. Soma de Elementos de um Array
 Descrição:
 Calcule a soma dos elementos de um array.
 Tarefas:
 Crie um array como [1, 2, 3, 4, 5].
 Use um loop ou o método reduce para somar os valores.
-Exiba o resultado no console.
+Exiba o resultado no console.*/
 
-8. Número Primo
+/*8. Número Primo
 Descrição:
 Verifique se um número informado pelo usuário é primo.
 Tarefas:
 Crie uma função que receba um número.
 Verifique se ele é divisível apenas por 1 e por ele mesmo.
-Exiba "É primo" ou "Não é primo".
+Exiba "É primo" ou "Não é primo".*/
 
-9. Fatorial de um Número
+function numeroPrimo() {
+    const n7 = parseInt(document.getElementById('n7').value);
+    let isPrimo = n7 > 1;
+    for (let i = 2; i <= Math.sqrt(n7); i++) {
+        if (n7 % i === 0) {
+            isPrimo = false;
+            break;
+        }
+    }
+    const result = isPrimo ? "É primo" : "Não é primo";
+    document.getElementById('result7').innerText = `Resultado: ${result}`;
+}
+
+/*9. Fatorial de um Número
 Descrição:
 Calcule o fatorial de um número informado pelo usuário.
 Tarefas:
 Crie uma função que receba um número.
 Use um loop para multiplicar os números de 1 até o número informado.
-Exiba o resultado no console.
+Exiba o resultado no console.*/
 
-10. Verificar Palíndromo
+function fatorial() {
+    const n8 = parseInt(document.getElementById('n8').value);
+    let fatorial = 1;
+    for (let i = 1; i <= n8; i++) {
+        fatorial *= i;
+    }
+    document.getElementById('result8').innerText = `Fatorial: ${fatorial}`;
+}
+
+/*10. Verificar Palíndromo
 Descrição:
 Verifique se uma palavra informada pelo usuário é um palíndromo (lê-se igual de trás para frente).
 Tarefas:

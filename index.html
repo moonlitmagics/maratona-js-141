@@ -8,7 +8,67 @@
 </head>
 
 <body>
-    <script src="./script.js"></script>
+
+    <form>
+        <h1>Exercício 1 (Soma)</h1>
+        <input type="number" id="n1" placeholder="Número 1" />
+        <input type="number" id="n2" placeholder="Número 2" />
+        <button type="button" onclick="somar()">Calcular</button>
+        <p id="result"></p>
+    </form>
+
+    <h1>Exercício 2 (Par ou Ímpar)</h1>
+        <input type="number" id="n3" placeholder="Digite um número" />
+        <button type="button" onclick="verificar()">Verificar</button>
+        <p id="result1"></p>
+    </form>
+
+    <form>
+        <h1>Exercicio 3 (Loop)</h1>
+        <label for="number"> Loop 1 à 10 </label>
+        <input type="button" value="Verificar" onclick="loop()" />
+        <p id="result2">Resultado</p>
+    </form>
+
+    <form>
+        <h1>Exercício 4 (Tabuada)</h1>
+        <input type="number" id="n5" placeholder="Digite um número" />
+        <button type="button" onclick="tabuada()">Calcular</button>
+        <p id="result3" style="white-space: pre;"></p>
+    </form>
+
+    <form>
+        <h1>Encontrar o Maior Número</h1>
+        <label for="numeros">Digite os números separados por vírgula:</label>
+        <input type="text" id="numeros" placeholder="Ex: 9, 4, 6, 2, 1" />
+        <br />
+        <input type="button" value="Encontrar Maior" onclick="maiorNumero()" />
+        <p id="result4"></p>
+    </form>
+
+    <form>
+        <h1>Exercício 6 (Inverter Palavra)</h1>
+        <input type="text" id="palavra" placeholder="Digite uma palavra" />
+        <button type="button" onclick="inverterPalavra()">Inverter</button>
+        <p id="result5"></p>
+    </form>
+
+    <form>
+        <h1>Exercício 8 (Número Primo)</h1>
+        <input type="number" id="n7" placeholder="Digite um número" />
+        <button type="button" onclick="numeroPrimo()">Verificar</button>
+        <p id="result7"></p>
+    </form>
+
+    <form>
+        <h1>Exercício 9 (Fatorial)</h1>
+        <input type="number" id="n8" placeholder="Digite um número" />
+        <button type="button" onclick="fatorial()">Calcular</button>
+        <p id="result8"></p>
+    </form>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
