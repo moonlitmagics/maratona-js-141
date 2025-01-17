@@ -111,6 +111,20 @@ Crie um array como [1, 2, 3, 4, 5].
 Use um loop ou o método reduce para somar os valores.
 Exiba o resultado no console.*/
 
+function somaArray() {
+    const array = [1, 2, 3, 4, 5];
+    let soma = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        soma += array[i];
+    }
+
+    document.getElementById('result6').innerText = `Soma dos elementos com for: ${soma}`; 
+    console.log(`Soma dos elementos com for: ${soma}`);
+}
+somaArray();
+
+
 /*8. Número Primo
 Descrição:
 Verifique se um número informado pelo usuário é primo.
@@ -155,40 +169,90 @@ Verifique se uma palavra informada pelo usuário é um palíndromo (lê-se igual
 Tarefas:
 Crie uma função que receba uma string.
 Inverta a string e compare com o original.
-Exiba no console se a palavra é ou não um palíndromo.
+Exiba no console se a palavra é ou não um palíndromo.*/
+//O método split() divide um objeto de string em um array de string separando a string em substrings
+//O método reverse() inverte um array diretamente. O primeiro elemento do array passa a ser o último e o último se torna o primeiro
+//O método join() une todos os elementos de um array em uma string
 
-11. Contar Vogais em uma Frase
+function polindromo() {
+    const palavra2 = document.getElementById('palavra2').value;
+    const palavra_invertida = palavra2.split("").reverse().join(""); 
+
+    document.getElementById('result9').innerText = `Palavra invertida: ${palavra_invertida} Palavra original: ${palavra2}`;
+    console.log("Palavra invertida: " + palavra_invertida + "Palavra original: " + palavra2)
+}
+
+
+/*11. Contar Vogais em uma Frase
 Descrição:
 Dada uma frase, conte o número de vogais.
 Tarefas:
 Peça ao usuário uma frase.
 Use um loop para verificar cada caractere.
-Conte as vogais (a, e, i, o, u) e exiba o total.
+Conte as vogais (a, e, i, o, u) e exiba o total.*/
 
-12. Gerar Números Aleatórios
+function contarVogais() {
+    const frase = document.getElementById('frase').value;
+    const vogais = "aeiouAEIOU"; 
+    let totalVogais = 0;
+
+    for (let i = 0; i < frase.length; i++) {
+        if (vogais.includes(frase[i])) { 
+            totalVogais++;
+        }
+    }
+
+    document.getElementById('result10').innerText = `Número de vogais: ${totalVogais}`;
+    console.log(`Número de vogais: ${totalVogais}`);
+}
+
+
+/*12. Gerar Números Aleatórios
 Descrição:
 Gere um número aleatório entre 1 e 100.
 Tarefas:
 Use a função Math.random e ajuste o intervalo para 1 a 100.
-Exiba o número gerado no console.
+Exiba o número gerado no console.*/
 
-13. Substituir Números Negativos por Zero
+function gerarNumeroAleatorio() {
+    const numeroAleatorio = Math.floor(Math.random() * 100) + 1; 
+    document.getElementById('result11').innerText = `Número gerado: ${numeroAleatorio}`;
+    console.log(`Número gerado: ${numeroAleatorio}`);
+}
+
+
+/*13. Substituir Números Negativos por Zero
 Descrição:
 Dado um array de números, substitua todos os números negativos por zero.
 Tarefas:
 Crie um array como [4, -3, 2, -1, 0].
 Use um loop para verificar cada número.
-Substitua os números negativos por 0 e exiba o array no console.
+Substitua os números negativos por 0 e exiba o array no console.*/
 
-14. Verificar Palavras Proibidas em um Texto
+function Substituir() {
+    let array = [4, -3, 2, -1, 0]; 
+    
+    for (let i = 0; i < array.length; i++) { //length tem como responsabilidade retornar a quantidade de caracteres de uma string ou o tamanho de um array
+        if (array[i] < 0) {
+            array[i] = 0; 
+        }
+    }
+    document.getElementById('result12').innerText = `Array atualizado: ${array}`; 
+    console.log(`Array atualizado: ${array}`);
+}
+
+/*14. Verificar Palavras Proibidas em um Texto
 Descrição:
 Verifique se uma frase contém palavras proibidas.
 Tarefas:
 Crie um array de palavras proibidas como ['palavra1', 'palavra2'].
 Peça ao usuário uma frase.
-Verifique se a frase contém alguma palavra do array e exiba uma mensagem de alerta.
+Verifique se a frase contém alguma palavra do array e exiba uma mensagem de alerta.*/
 
-15. Gerar uma Lista de Números Pares
+
+
+
+/*15. Gerar uma Lista de Números Pares
 Descrição:
 Crie uma lista de números pares entre 1 e 20.
 Tarefas:
